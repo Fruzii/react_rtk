@@ -5,3 +5,7 @@ Dockerfile
 .vscode
 .gitignore
 client/yarn.lock
+package-lock.json
+yarn.lock
+package-lock.json
+client/.gitignore
