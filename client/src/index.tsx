@@ -3,7 +3,6 @@ import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { store } from "./app/store";
-import App from "./App";
 
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
@@ -11,11 +10,13 @@ import { Paths } from "./paths";
 import { Login } from "./pages/login";
 import { Register } from "./pages/register";
 import { ConfigProvider, theme } from "antd";
+import { Auth } from "./features/auth/auth";
+import { Employees } from "./pages/employees";
 
 const router = createBrowserRouter([
   {
     path: Paths.home,
-    element: <App />,
+    element: <Employees />,
   },
   {
     path: Paths.login,
@@ -34,7 +35,9 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <ConfigProvider theme={{ algorithm: theme.darkAlgorithm }}>
-        <RouterProvider router={router} />
+        <Auth>
+          <RouterProvider router={router} />
+        </Auth>
       </ConfigProvider>
     </Provider>
   </React.StrictMode>
