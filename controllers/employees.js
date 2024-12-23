@@ -31,15 +31,6 @@ const add = async (req, res, next) => {
       req.status(400).json({ message: "All fields are required!" });
     }
 
-    // const employees = await prisma.user.update({
-    //     where: {id: req.user.id},
-    //     data: {
-    //         createdEmployee: {
-    //             create: {firstName, lastName, address, age}
-    //         }
-    //     }
-    // })
-
     const employees = await prisma.employee.create({
       data: {
         firstName,

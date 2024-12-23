@@ -7,5 +7,5 @@ Dockerfile
 client/yarn.lock
 package-lock.json
 yarn.lock
-package-lock.json
 client/.gitignore
+prisma/dev.db

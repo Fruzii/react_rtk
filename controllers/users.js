@@ -1,15 +1,3 @@
-// export async function login(req, res, next) {
-//   res.send("respond with a login");
-// }
-
-// export async function register(req, res, next) {
-//   res.send("respond with a register");
-// }
-
-// export async function current(req, res, next) {
-//   res.send("respond with a current");
-// }
-
 const { prisma } = require("../prisma/prisma-client");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");

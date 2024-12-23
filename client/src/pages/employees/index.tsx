@@ -31,19 +31,21 @@ const columns: ColumnsType<Employee> = [
 
 export const Employees = () => {
   const navigate = useNavigate();
-  const user = useSelector(selectUser)
+  const user = useSelector(selectUser);
   const { data, isLoading } = useGetAllEmployeesQuery();
 
   useEffect(() => {
     if (!user) {
-        navigate('/login')
+      navigate("/login");
     }
-  }, [navigate, user])
+  }, [navigate, user]);
+
+  const goToAddUser = () => navigate(Paths.employeesAdd);
   return (
     <Layout>
       <CustomButton
         type="primary"
-        onClick={() => {}}
+        onClick={goToAddUser}
         icon={<PlusCircleOutlined />}
       >
         Add
@@ -54,10 +56,10 @@ export const Employees = () => {
         pagination={false}
         columns={columns}
         rowKey={(rec) => rec.id}
-        onRow={ (rec) => {
-            return {
-                onClick: () => navigate(`${Paths.employees}/${rec.id}`)
-            }
+        onRow={(rec) => {
+          return {
+            onClick: () => navigate(`${Paths.employees}/${rec.id}`),
+          };
         }}
       />
     </Layout>
